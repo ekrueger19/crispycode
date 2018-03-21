@@ -65,11 +65,11 @@ while True:
         if RPL.digitalRead(right) != 0: # nothing to side, go
             now = time.time()
             future = now + 1
-            while now < future:
-                RPL.servoWrite(motorL, rgo)
-                RPL.servoWrite(motorR, rgo)
-            RPL.servoWrite(motorR, rgo)
-            RPL.servoWrite(motorL, lgo)
+            while True:
+                if time.time() > future:
+                    RPL.servoWrite(motorR, rgo)
+                    RPL.servoWrite(motorL, lgo)
+                    break
             print ":::::::::::"
             break
 
