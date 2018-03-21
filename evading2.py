@@ -13,7 +13,7 @@ front = 16
 left = 19
 
 rgo = 2000
-lgo = 2000
+lgo = 1000
 
 
 def Rmin(go):
