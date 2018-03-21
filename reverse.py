@@ -70,21 +70,21 @@ while RPL.digitalRead(16) == 0:
                         RPL.servoWrite(0, 2000)
                         RPL.servoWrite(2, 1000)
                         while time.time() >= future:
-            while RPL.digitalRead(24) == 1:
-                while RPL.digitalRead(17) == 0:
-                    future = time.time() + 2
-                    while time.time() < future:
-                        RPL.servoWrite(0, 0)
-                        RPL.servoWrite(2, 12000)
-                        if time.time() >= future:
-                            RPL.servoWrite(0, 1000)
-                            RPL.servoWrite(2, 2000)
-            while RPL.digitalRead(24) == 0:
-                while RPL.digitalRead(17) == 1:
-                    future = time.time() + 2
-                    if time.time() < future:
-                        RPL.servoWrite(2, 0)
-                        RPL.servoWrite(0, 1000)
-                        if time.time() >= future:
-                            RPL.servoWrite(0, 1000)
-                            RPL.servoWrite(2, 2000)
+                            while RPL.digitalRead(24) == 1:
+                                while RPL.digitalRead(17) == 0:
+                                    future = time.time() + 2
+                                    while time.time() < future:
+                                        RPL.servoWrite(0, 0)
+                                        RPL.servoWrite(2, 12000)
+                                        if time.time() >= future:
+                                            RPL.servoWrite(0, 1000)
+                                            RPL.servoWrite(2, 2000)
+                            while RPL.digitalRead(24) == 0:
+                                while RPL.digitalRead(17) == 1:
+                                    future = time.time() + 2
+                                    if time.time() < future:
+                                        RPL.servoWrite(2, 0)
+                                        RPL.servoWrite(0, 1000)
+                                        if time.time() >= future:
+                                            RPL.servoWrite(0, 1000)
+                                            RPL.servoWrite(2, 2000)
