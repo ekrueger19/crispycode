@@ -48,14 +48,14 @@ while True:
     while RPL.digitalRead(front) == 0: # something ahead, turn until nothing
         RPL.servoWrite(motorL, rgo)
         print "++++++"
-        if RPL.digitalRead(front) != 0: # nothing in front, go
+        if RPL.digitalRead(front) != 0: # nothing to side, go
             now = time.time()
             future = now + 1
-            while now < future:
-                RPL.servoWrite(motorL, rgo)
-                RPL.servoWrite(motorR, rgo)
-            RPL.servoWrite(motorR, rgo)
-            RPL.servoWrite(motorL, lgo)
+            while True:
+                if time.time() > future:
+                    RPL.servoWrite(motorR, rgo)
+                    RPL.servoWrite(motorL, lgo)
+                    break
             print "============="
             break
 
@@ -76,10 +76,13 @@ while True:
     while RPL.digitalRead(left) == 0: # something to left...
         print "ooooooooooo"
         RPL.servoWrite(motorR, lgo) # pivot
-        if RPL.digitalRead(right) != 0: # nothing to side, go
-            print "mmmmmmmmmmmmmm"
+        if RPL.digitalRead(left) != 0: # nothing to side, go
             now = time.time()
-            Lmin(now)
-            RPL.servoWrite(motorR, rgo)
-            RPL.servoWrite(motorL, lgo)
+            future = now + 1
+            while True:
+                if time.time() > future:
+                    RPL.servoWrite(motorR, rgo)
+                    RPL.servoWrite(motorL, lgo)
+                    break
+            print "mmmmmmmmmmmmmm"
             break
