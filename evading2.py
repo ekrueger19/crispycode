@@ -8,9 +8,9 @@ future = now
 motorL = 0
 motorR = 2
 
-right = 19
+right = 17
 front = 16
-left = 17
+left = 19
 
 rgo = 2000
 lgo = 2000
