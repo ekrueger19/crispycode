@@ -22,7 +22,7 @@ while RPL.digitalRead(16) == 1:
                 #Something still there? Keep Going!
                 while RPL.digitalRead(19) == 0:
                     while RPL.digitalRead(17) == 0:
-                        future = time.time() + 1
+                        future = time.time() + 0.5
                         while time.time() < future:
                             RPL.servoWrite(0, 2000) # motors reverse
                             RPL.servoWrite(2, 1000)
