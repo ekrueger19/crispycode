@@ -43,7 +43,6 @@ while RPL.digitalRead(16) == 1:
                                 RPL.servoWrite(0, 2000)
                                 RPL.servoWrite(2, 1000)
                                 print "going forward"
-                                continue
                 while RPL.digitalRead(19) == 1:
                     print "something to the right"
                     while RPL.digitalRead(17) == 0:
@@ -57,7 +56,6 @@ while RPL.digitalRead(16) == 1:
                                 RPL.servoWrite(0, 1000)
                                 RPL.servoWrite(2, 2000)
                                 print "going forward"
-                                continue
                     while RPL.digitalRead(17) == 0:
                         future = time.time() + 2
                         while time.time() < future:
@@ -68,7 +66,6 @@ while RPL.digitalRead(16) == 1:
                                 RPL.servoWrite(0, 1000)
                                 RPL.servoWrite(2, 2000)
                                 print "going forward"
-                                continue
 
 while RPL.digitalRead(16) == 0:
     future = time.time() + 3
@@ -92,7 +89,6 @@ while RPL.digitalRead(16) == 0:
                                         if time.time() >= future:
                                             RPL.servoWrite(0, 1000)
                                             RPL.servoWrite(2, 2000)
-                                            continue
                             while RPL.digitalRead(19) == 0:
                                 while RPL.digitalRead(17) == 1:
                                     future = time.time() + 2
@@ -102,4 +98,3 @@ while RPL.digitalRead(16) == 0:
                                         if time.time() >= future:
                                             RPL.servoWrite(0, 1000)
                                             RPL.servoWrite(2, 2000)
-                                            continue
