@@ -87,9 +87,9 @@ while True:
     while RPL.digitalRead(left) == 0: # something to left...
         while RPL.digitalRead(right) == 0: # something to right...
         print "~~~~~~~~~~~~~~"
-        RPL.servoWrite(motorR, lgo) # pivot
-        if RPL.digitalRead(right) != 0: # nothing to side, go
-            print "mmmmmmmmmmmmmm"
+        RPL.servoWrite(motorR, rgo) # continue straight
+        RPL.servoWrite(motorL, lgo)
+            print "$$$$$$$$$$$$"
             now = time.time()
             Lmin(now)
             RPL.servoWrite(motorR, rgo)
