@@ -22,7 +22,7 @@ while RPL.digitalRead(16) == 1:
                 #Something still there? Keep Going!
                 while RPL.digitalRead(19) == 0:
                     while RPL.digitalRead(17) == 0:
-                        future = time.time() + 1
+                        future = time.time() + 0.5
                         while time.time() < future:
                             RPL.servoWrite(0, 2000) # motors reverse
                             RPL.servoWrite(2, 1000)
@@ -39,23 +39,36 @@ while RPL.digitalRead(16) == 1:
                             RPL.servoWrite(0, 0)
                             RPL.servoWrite(2, 2000)
                             print "turning right"
-                            if time.time() >= future:
+                            while time.time() >= future:
                                 RPL.servoWrite(0, 2000)
                                 RPL.servoWrite(2, 1000)
                                 print "going forward"
+                                continue
+                while RPL.digitalRead(19) == 1:
+                    print "something to the right"
                     while RPL.digitalRead(17) == 0:
-                        print "something to the right"
-                        while RPL.digitalRead(19) == 1:
-                            print "nothing to the left"
-                            future = time.time() + 2
-                            while time.time() < future:
-                                RPL.servoWrite(0, 1000)
-                                RPL.servoWrite(2, 0)
-                                print "turning left"
-                            if time.time() >= future:
+                        print "nothing to the left"
+                        future = time.time() + 2
+                        while time.time() < future:
+                            RPL.servoWrite(0, 1000)
+                            RPL.servoWrite(2, 0)
+                            print "turning left"
+                            while time.time() >= future:
                                 RPL.servoWrite(0, 1000)
                                 RPL.servoWrite(2, 2000)
                                 print "going forward"
+                                continue
+                    while RPL.digitalRead(17) == 0:
+                        future = time.time() + 2
+                        while time.time() < future:
+                            RPL.servoWrite(0, 1000)
+                            RPL.servoWrite(2, 0)
+                            print "turning left 2"
+                            while time.time() >= future:
+                                RPL.servoWrite(0, 1000)
+                                RPL.servoWrite(2, 2000)
+                                print "going forward"
+                                continue
 
 while RPL.digitalRead(16) == 0:
     future = time.time() + 3
@@ -79,6 +92,7 @@ while RPL.digitalRead(16) == 0:
                                         if time.time() >= future:
                                             RPL.servoWrite(0, 1000)
                                             RPL.servoWrite(2, 2000)
+                                            continue
                             while RPL.digitalRead(19) == 0:
                                 while RPL.digitalRead(17) == 1:
                                     future = time.time() + 2
@@ -88,3 +102,4 @@ while RPL.digitalRead(16) == 0:
                                         if time.time() >= future:
                                             RPL.servoWrite(0, 1000)
                                             RPL.servoWrite(2, 2000)
+                                            continue
