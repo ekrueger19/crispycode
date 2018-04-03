@@ -1,10 +1,6 @@
 
 import setup
 import RoboPiLib as RPL
-import time
-
-now = time.time()
-future = now
 
 motorL = 0
 motorR = 2
@@ -24,7 +20,7 @@ RPL.servoWrite(motorL, lgo)
 while True:
     RPL.servoWrite(motorR, rgo)
     RPL.servoWrite(motorL, lgo)
-    print ":):):):):):):):):)"
+    print "-----------"
 
     while RPL.digitalRead(front) == 0 and RPL.digitalRead(right) == 0: # reverse
         if RPL.digitalRead(left) == 0:
@@ -36,13 +32,8 @@ while True:
         RPL.servoWrite(motorL, rgo)
         print RPL.digitalRead(front)
         if RPL.digitalRead(front) != 0: # nothing to side, go
-            now = time.time()
-            future = now + 1
-            while True:
-                if time.time() > future:
-                    RPL.servoWrite(motorR, rgo)
-                    RPL.servoWrite(motorL, lgo)
-                    break
+            RPL.servoWrite(motorR, rgo)
+            RPL.servoWrite(motorL, lgo)
             print RPL.digitalRead(front)
             break
 
@@ -50,13 +41,8 @@ while True:
         print RPL.digitalRead(right)
         RPL.servoWrite(motorL, rgo) # pivot
         if RPL.digitalRead(right) != 0: # nothing to side, go
-            now = time.time()
-            future = now + 1
-            while True:
-                if time.time() > future:
-                    RPL.servoWrite(motorR, rgo)
-                    RPL.servoWrite(motorL, lgo)
-                    break
+            RPL.servoWrite(motorR, rgo)
+            RPL.servoWrite(motorL, lgo)
             print RPL.digitalRead(right)
             break
 
@@ -64,12 +50,7 @@ while True:
         print RPL.digitalRead(left)
         RPL.servoWrite(motorR, lgo) # pivot
         if RPL.digitalRead(left) != 0: # nothing to side, go
-            now = time.time()
-            future = now + 1
-            while True:
-                if time.time() > future:
-                    RPL.servoWrite(motorR, rgo)
-                    RPL.servoWrite(motorL, lgo)
-                    break
+            RPL.servoWrite(motorR, rgo)
+            RPL.servoWrite(motorL, lgo)
             print RPL.digitalRead(left)
             break
