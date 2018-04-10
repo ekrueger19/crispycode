@@ -21,3 +21,6 @@ lgo = 1000
 
 while True:
     print RPL.analogRead(analogR)
+
+#    if RPL.analogRead(analogR) > 300:
+        print "ay"
