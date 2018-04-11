@@ -16,6 +16,8 @@ while True:
         while time.time() < future:
             RPL.servoWrite(motorL, 600)
             RPL.servoWrite(motorR, 1500)
-            if time.time() >= future:
+            print "slowing"
+            while time.time() >= future:
                 RPL.servoWrite(motorL, 0)
                 RPL.servoWrite(motorR, 0)
+                print "stop"
