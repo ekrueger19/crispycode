@@ -12,5 +12,10 @@ while True:
         print "nothing"
 
     while RPL.digitalRead(16) == 0:
-        RPL.servoWrite(motorL, 600)
-        RPL.servoWrite(motorR, 600)
+        future = time.time() + 0.5
+        while time.time() < future:
+            RPL.servoWrite(motorL, 600)
+            RPL.servoWrite(motorR, 1500)
+            if time.time() >= future:
+                RPL.servoWrite(motorL, 0)
+                RPL.servoWrite(motorR, 0)
