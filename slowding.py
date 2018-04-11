@@ -7,10 +7,10 @@ motorL = 0
 
 while True:
     while RPL.digitalRead(16) == 1:
-        RPL.servoWrite(motorL, 1000)
+        RPL.servoWrite(motorL, 100)
         RPL.servoWrite(motorR, 2000)
         print "nothing"
 
     while RPL.digitalRead(16) == 0:
-        RPL.servoWrite(motorL, 500)
-        RPL.servoWrite(motorR, 500)
+        RPL.servoWrite(motorL, 600)
+        RPL.servoWrite(motorR, 600)
