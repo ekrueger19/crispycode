@@ -1,3 +1,4 @@
+
 import setup
 import RoboPiLib as RPL
 import time
@@ -16,9 +17,6 @@ rgo = 2000
 lgo = 1000
 
 
-# next step: if both L and R sense something, keep going straight
-# next step: make the reverse work
-
 RPL.servoWrite(motorR, rgo)
 RPL.servoWrite(motorR, rgo)
 RPL.servoWrite(motorL, lgo)
@@ -29,7 +27,7 @@ while True:
     print ".............."
 
     while RPL.digitalRead(front) == 0 and RPL.digitalRead(right) == 0: # reverse
-        while RPL.digitalRead(left) == 0:
+        if RPL.digitalRead(left) == 0:
             RPL.servoWrite(motorR, lgo)
             RPL.servoWrite(motorL, rgo)
 
@@ -50,20 +48,17 @@ while True:
 
     while RPL.digitalRead(right) == 0: # something to right...
         print "llllllllllllll"
-        if RPL.digitalRead(left) == 0:
+        RPL.servoWrite(motorL, rgo) # pivot
+        if RPL.digitalRead(right) != 0: # nothing to side, go
+            now = time.time()
+            future = now + 1
+            while True:
+                if time.time() > future:
+                    RPL.servoWrite(motorR, rgo)
+                    RPL.servoWrite(motorL, lgo)
+                    break
+            print ":::::::::::"
             break
-        elif:
-            RPL.servoWrite(motorL, rgo) # pivot
-            if RPL.digitalRead(right) != 0: # nothing to side
-                now = time.time()
-                future = now + 1
-                while True:
-                    if time.time() > future:
-                        RPL.servoWrite(motorR, rgo)
-                        RPL.servoWrite(motorL, lgo)
-                        break
-                print ":::::::::::"
-                break
 
     while RPL.digitalRead(left) == 0: # something to left...
         print "ooooooooooo"

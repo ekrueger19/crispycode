@@ -22,12 +22,6 @@ while True:
     RPL.servoWrite(motorL, lgo)
     print "-----------"
 
-    while RPL.digitalRead(front) == 0 and RPL.digitalRead(right) == 0: # reverse
-        if RPL.digitalRead(left) == 0:
-            RPL.servoWrite(motorR, lgo)
-            RPL.servoWrite(motorL, rgo)
-
-
     while RPL.digitalRead(front) == 0: # something ahead, turn until nothing
         RPL.servoWrite(motorL, rgo)
         print RPL.digitalRead(front)
