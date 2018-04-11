@@ -20,9 +20,10 @@ rgo = 2000
 lgo = 1000
 
 while True:
-    if RPL.analogRead(analogR) > 300:
-        print "so far away"
-    if 100 < RPL.analogRead(analogR) <= 300:
-        print "very close, or oh so far away..."
-    if RPL.analogRead(analogR) <= 100:
-        print "there aint nothing"
+    if RPL.analogRead(analogR) > 600:
+        print "middle"
+    if RPL.analogRead(analogR) < 600:
+        if RPL.digitalRead(19) == 0:
+            print "close"
+        elif RPL.digitalRead(19) == 1:
+            print "far"
