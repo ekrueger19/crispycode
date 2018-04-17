@@ -14,7 +14,7 @@ right = 17
 front = 16
 left = 19
 
-analogR = 5
+analogR = 1
 
 rgo = 2000
 lgo = 1000
