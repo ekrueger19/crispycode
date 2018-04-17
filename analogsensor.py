@@ -23,7 +23,7 @@ while True:
     if RPL.analogRead(analogR) > 600:
         print "middle"
     if RPL.analogRead(analogR) < 600:
-        if RPL.digitalRead(19) == 0:
+        while RPL.digitalRead(19) == 0:
             print "close"
-        elif RPL.digitalRead(19) == 1:
+        while RPL.digitalRead(19) == 1:
             print "far"
