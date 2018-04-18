@@ -3,6 +3,9 @@
 # this should be a wall following type thing but be nice to it
 
 
+# perceived problem: will zig zag
+
+
 import setup
 import RoboPiLib as RPL
 import time
@@ -27,11 +30,12 @@ RPL.servoWrite(motorR, rgo)
 RPL.servoWrite(motorR, rgo)
 RPL.servoWrite(motorL, lgo)
 RPL.servoWrite(motorL, lgo)
+
 while True:
     RPL.servoWrite(motorR, rgo)
     RPL.servoWrite(motorL, lgo)
 
-    while RPL.analogRead(analogR) >= 500: # middle range, can go straight
+    while RPL.analogRead(analogR) >= 300: # middle range, can go straight
         print "we good"
         RPL.servoWrite(motorR, rgo)
         RPL.servoWrite(motorL, lgo)
