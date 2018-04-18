@@ -30,3 +30,5 @@ while True:
         while RPL.digitalRead(19) == 1:
             print "far"
             print RPL.analogRead(analogR)
+        while RPL.analogRead(analogR) >= 550:
+            continue
