@@ -20,10 +20,10 @@ rgo = 2000
 lgo = 1000
 
 while True:
-    while RPL.analogRead(analogR) >= 550:
+    while RPL.analogRead(analogR) >= 300:
         print "middle"
         print RPL.analogRead(analogR)
-    while RPL.analogRead(analogR) < 550:
+    while RPL.analogRead(analogR) < 300:
         while RPL.digitalRead(19) == 0:
             print "close"
             print RPL.analogRead(analogR)
