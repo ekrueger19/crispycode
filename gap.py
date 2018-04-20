@@ -5,7 +5,7 @@ import time
 now = time.time()
 future = now
 
-motorR = 1
+motorR = 2
 motorL = 0
 # lsens = 23
 # fsens = 16
