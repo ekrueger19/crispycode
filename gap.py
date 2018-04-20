@@ -15,11 +15,11 @@ motorL = 0
 
 while RPL.digitalRead(23) == 0:
   RPL.servoWrite(motorR,2000)
-  RPL.servoWrite(motorL,1000)
+  RPL.servoWrite(motorL,100)
   if RPL.digitalRead(23) == 1:
     future = time.time() + 2
     RPL.servoWrite(motorR,2000)
     RPL.servoWrite(motorL,0)
     if time.time() < future:
         RPL.servoWrite(motorR, 2000)
-        RPL.servoWrite(motorL, 1000)
+        RPL.servoWrite(motorL, 100)
