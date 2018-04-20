@@ -13,3 +13,5 @@ while True:
         RPL.servoWrite(0,800)
     if doit == "d":
         RPL.servoWrite(0,3000)
+    if doit == "sand":
+        break
