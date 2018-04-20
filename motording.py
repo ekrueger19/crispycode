@@ -16,20 +16,18 @@ while raw_input("> ") == "a":
     RPL.servoWrite(falala, toodledoo)
     print "fast"
 while raw_input("> ") == "b":
-    x = 100
-    x = x + 100
-    print x
-    y = 2000
-    y = y - 100
-    print y
-    RPL.servoWrite(lala, x)
-    RPL.servoWrite(falala, y)
+    RPL.servoWrite(lala, 600)
+    RPL.servoWrite(falala, 1600)
+    print "slow"
 while raw_input("> ") == "c":
-    food = x
-    food = food + 50
-    print food
-    ugh = y
-    ugh = ugh - 50
-    print ugh
-    RPL.servoWrite(lala, food)
-    RPL.servoWrite(falala, ugh)
+    RPL.servoWrite(lala, 700)
+    RPL.servoWrite(falala, 1400)
+    print "slow backwards"
+while raw_input("> ") == "d":
+    RPL.servoWrite(lala, 1000)
+    RPL.servoWrite(falala, 1000)
+    print "fast backwards"
+while raw_input("> ") == "q":
+    RPL.servoWrite(lala, 0)
+    RPL.servoWrite(falala, 0)
+    print "done"
