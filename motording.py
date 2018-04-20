@@ -16,9 +16,18 @@ while raw_input("> ") == "a":
     RPL.servoWrite(falala, toodledoo)
     print "fast"
 while raw_input("> ") == "b":
-    toodledoo = 100
-    toodledoo = toodledoo + 50
-    dingywink = 2000
-    dingywink = dingywink - 50
-    RPL.servoWrite(lala, toodledoo)
-    RPL.servoWrite(falala, dingywink)
+    RPL.servoWrite(lala, 600)
+    RPL.servoWrite(falala, 1600)
+    print "slow"
+while raw_input("> ") == "c":
+    RPL.servoWrite(lala, 700)
+    RPL.servoWrite(falala, 1400)
+    print "slow backwards"
+while raw_input("> ") == "d":
+    RPL.servoWrite(lala, 1000)
+    RPL.servoWrite(falala, 1000)
+    print "fast backwards"
+while raw_input("> ") == "q":
+    RPL.servoWrite(lala, 0)
+    RPL.servoWrite(falala, 0)
+    print "done"

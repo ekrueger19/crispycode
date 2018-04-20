@@ -20,7 +20,7 @@ front = 16
 left = 19
 
 rgo = 2000
-lgo = 1000
+lgo = 200
 
 
 RPL.servoWrite(motorR, rgo)
