@@ -7,11 +7,13 @@ future = now
 
 doit = raw_input("> ")
 
+# MAKE A CODE!
+
 while True:
     doit = raw_input("> ")
     if doit == "a":
         RPL.servoWrite(0,800)
     if doit == "d":
         RPL.servoWrite(0,3000)
-    if doit == "sand":
+    else:
         break
