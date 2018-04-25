@@ -24,21 +24,23 @@ while True:
     print "Do you want to unlock a safe? Riddle me this:"
     print "Why don't you like sand?"
 
-    if donde = 1:
+    if donde == 1:
         one()
-    if donde = 2:
+    if donde == 2:
         two()
-    if donde = 3:
+    if donde == 3:
         three()
+    if donde == 0:
+        break
 
     def one():
         p1 = raw_input("> ")
         if p1 == "course":
             RPL.servoWrite(0,step1)
             donde = donde + 1
-        elif p1 == "You're going down a path I can't follow"
+        elif p1 == "You're going down a path I can't follow":
             print "Ironic."
-            break
+            donde = 0
         else:
             RPL.servoWrite(0,lock)
             print "It's over Anakin"
@@ -59,7 +61,7 @@ while True:
         if p3 == "irritating":
             RPL.servoWrite(0,unlock)
             print "General Kenobi, you are a bold one."
-            break
+            donde = 0
         else:
             RPL.servoWrite(0,lock)
             print "It's over Anakin"
