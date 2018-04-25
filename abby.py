@@ -24,11 +24,11 @@ while True:
     print "Do you want to unlock a safe? Riddle me this:"
     print "Why don't you like sand?"
 
-    if donde = 1:
+    if donde == 1:
         one()
-    if donde = 2:
+    if donde == 2:
         two()
-    if donde = 3:
+    if donde == 3:
         three()
 
     def one():
