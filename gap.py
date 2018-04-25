@@ -16,15 +16,18 @@ motorL = 0
 RPL.servoWrite(motorR,2000)
 RPL.servoWrite(motorL,100)
 
-while RPL.digitalRead(23) == 1:
+while RPL.digitalRead(23) == 0:
   RPL.servoWrite(motorR,2000)
   RPL.servoWrite(motorL,100)
-  if RPL.digitalRead(23) == 0:
+  print "--------"
+  if RPL.digitalRead(23) == 1:
      RPL.servoWrite(motorR,2000)
      RPL.servoWrite(motorL,0)
      future = time.time() + 2
      RPL.servoWrite(motorR,2000)
      RPL.servoWrite(motorL,0)
-     if time.time() < future:
+     print "gap"
+     if time.time() > future:
          RPL.servoWrite(motorR, 2000)
          RPL.servoWrite(motorL, 100)
+         print "!!!!!!!!"
