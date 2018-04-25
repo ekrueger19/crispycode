@@ -30,6 +30,8 @@ while True:
         two()
     if donde == 3:
         three()
+    if donde == 0:
+        break
 
     def one():
         p1 = raw_input("> ")
@@ -38,7 +40,7 @@ while True:
             donde = donde + 1
         elif p1 == "You're going down a path I can't follow":
             print "Ironic."
-            break
+            donde = 0
         else:
             RPL.servoWrite(0,lock)
             print "It's over Anakin"
@@ -59,7 +61,7 @@ while True:
         if p3 == "irritating":
             RPL.servoWrite(0,unlock)
             print "General Kenobi, you are a bold one."
-            break
+            donde = 0
         else:
             RPL.servoWrite(0,lock)
             print "It's over Anakin"
