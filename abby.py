@@ -5,7 +5,6 @@ import time
 now = time.time()
 future = now
 
-doit = raw_input("> ")
 
 # MAKE A CODE!
 # input a Password
@@ -44,6 +43,7 @@ while True:
     if p3 == "irritating":
         RPL.servoWrite(0,unlock)
         print "General Kenobi, you are a bold one."
+        break
 
     else:
         RPL.servoWrite(0,lock)
