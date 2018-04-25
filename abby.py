@@ -36,7 +36,7 @@ while True:
         if p1 == "course":
             RPL.servoWrite(0,step1)
             donde = donde + 1
-        elif p1 == "You're going down a path I can't follow"
+        elif p1 == "You're going down a path I can't follow":
             print "Ironic."
             break
         else:
