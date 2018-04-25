@@ -3,8 +3,8 @@ import RoboPiLib as RPL
 
 #tunes the motres
 
-lala = 2
-falala = 0
+falala = 2
+lala = 0
 toodledoo = 100
 dingywink = 2000
 
@@ -12,12 +12,12 @@ RPL.servoWrite(lala, dingywink)
 RPL.servoWrite(falala, toodledoo)
 
 while raw_input("> ") == "a":
-    RPL.servoWrite(lala, dingywink)
-    RPL.servoWrite(falala, toodledoo)
+    RPL.servoWrite(lala, toodledoo)
+    RPL.servoWrite(falala, dingywink)
     print "fast"
 while raw_input("> ") == "b":
     RPL.servoWrite(lala, 600)
-    RPL.servoWrite(falala, 1600)
+    RPL.servoWrite(falala, 1500)
     print "slow"
 while raw_input("> ") == "c":
     RPL.servoWrite(lala, 700)
