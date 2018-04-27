@@ -18,48 +18,47 @@ donde = 1
 
 # idea- make it so that if you get it wrong you go back, not just end
 
+RPL.servoWrite(0,lock)
+print "Do you want to unlock a safe? Riddle me this:"
+print "Why don't you like sand?"
+
+
+
+def one():
+    p1 = raw_input("> ")
+    if p1 == "course":
+        RPL.servoWrite(0,step1)
+        donde = 2
+    elif p1 == "You're going down a path I can't follow":
+        print "Ironic."
+        donde = 0
+    else:
+        RPL.servoWrite(0,lock)
+        print "It's over Anakin"
+        donde = 1
+
+def two():
+    p2 = raw_input("> ")
+    if p2 == "rough":
+        RPL.servoWrite(0,step2)
+        donde = 3
+    else:
+        RPL.servoWrite(0,lock)
+        print "It's over Anakin"
+        donde = 1
+
+def three():
+    p3 = raw_input("> ")
+    if p3 == "irritating":
+        RPL.servoWrite(0,unlock)
+        print "General Kenobi, you are a bold one."
+        donde = 0
+    else:
+        RPL.servoWrite(0,lock)
+        print "It's over Anakin"
+        donde = 1
+
 while True:
-    RPL.servoWrite(0,lock)
-    donde = 1
-    print "Do you want to unlock a safe? Riddle me this:"
-    print "Why don't you like sand?"
-
-
-
-    def one():
-        p1 = raw_input("> ")
-        if p1 == "course":
-            RPL.servoWrite(0,step1)
-            donde = donde + 1
-        elif p1 == "You're going down a path I can't follow":
-            print "Ironic."
-            donde = 0
-        else:
-            RPL.servoWrite(0,lock)
-            print "It's over Anakin"
-            donde = 1
-
-    def two():
-        p2 = raw_input("> ")
-        if p2 == "rough":
-            RPL.servoWrite(0,step2)
-            donde = donde + 1
-        else:
-            RPL.servoWrite(0,lock)
-            print "It's over Anakin"
-            donde = 1
-
-    def three():
-        p3 = raw_input("> ")
-        if p3 == "irritating":
-            RPL.servoWrite(0,unlock)
-            print "General Kenobi, you are a bold one."
-            donde = 0
-        else:
-            RPL.servoWrite(0,lock)
-            print "It's over Anakin"
-            donde = 1
-            
     if donde == 1:
         one()
     if donde == 2:
