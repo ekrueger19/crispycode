@@ -15,13 +15,10 @@ step1 = 1300
 step2 = 1700
 unlock = 3000
 
-# idea- make it so that if you get it wrong you go back, not just end
 
 RPL.servoWrite(0,lock)
 print "Do you want to unlock a safe? Riddle me this:"
 print "Why don't you like sand?"
-
-
 
 def one():
     p1 = raw_input("One: ")
