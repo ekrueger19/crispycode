@@ -59,15 +59,18 @@ def three():
         return False
 
 while True:
-    if one() == False:
-        break
-    if one() == True:
-        two()
-    if two() == True:
-        three()
-    if two() == False:
-        one()
-    if three() == False:
-        one()
-    if three() == True:
-        break
+    one()
+        if one() == False:
+            break
+        if one() == True:
+            two()
+    two()
+        if two() == True:
+            three()
+        if two() == False:
+            one()
+    three()
+        if three() == False:
+            one()
+        if three() == True:
+            break
