@@ -14,7 +14,6 @@ lock = 800
 step1 = 1300
 step2 = 1700
 unlock = 3000
-donde = 1
 
 # idea- make it so that if you get it wrong you go back, not just end
 
@@ -26,44 +25,49 @@ print "Why don't you like sand?"
 
 def one():
     p1 = raw_input("> ")
-    if p1 == "course":
+    if p1 == "It's course":
         RPL.servoWrite(0,step1)
-        donde = 2
+        return True
     elif p1 == "You're going down a path I can't follow":
         print "Ironic."
-        donde = 0
+        return False
     else:
         RPL.servoWrite(0,lock)
         print "It's over Anakin"
-        donde = 1
+        return False
 
 def two():
     p2 = raw_input("> ")
     if p2 == "rough":
         RPL.servoWrite(0,step2)
-        donde = 3
+        return True
     else:
         RPL.servoWrite(0,lock)
         print "It's over Anakin"
-        donde = 1
+        return False
 
 def three():
     p3 = raw_input("> ")
     if p3 == "irritating":
         RPL.servoWrite(0,unlock)
+        print "And it gets everywhere."
         print "General Kenobi, you are a bold one."
-        donde = 0
+        return True
     else:
         RPL.servoWrite(0,lock)
         print "It's over Anakin"
-        donde = 1
+        return False
 
 while True:
-    if donde == 1:
-        one()
-    if donde == 2:
+    if one() == False:
+        break
+    if one() == True:
         two()
-    if donde == 3:
+    if two() == True:
         three()
-    if donde == 0:
+    if two() == False:
+        one()
+    if three() == False:
+        one()
+    if three() == True:
         break
