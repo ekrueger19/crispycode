@@ -24,7 +24,7 @@ print "Why don't you like sand?"
 
 
 def one():
-    p1 = raw_input("> ")
+    p1 = raw_input("One: ")
     if p1 == "It's course":
         RPL.servoWrite(0,step1)
         return True
@@ -37,7 +37,7 @@ def one():
         return False
 
 def two():
-    p2 = raw_input("> ")
+    p2 = raw_input("Two: ")
     if p2 == "rough":
         RPL.servoWrite(0,step2)
         return True
@@ -47,7 +47,7 @@ def two():
         return False
 
 def three():
-    p3 = raw_input("> ")
+    p3 = raw_input("Three: ")
     if p3 == "irritating":
         RPL.servoWrite(0,unlock)
         print "And it gets everywhere."
