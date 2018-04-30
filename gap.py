@@ -19,19 +19,6 @@ motorL = 0
 
 RPL.servoWrite(motorR,2000)
 RPL.servoWrite(motorL,100)
-
-while RPL.digitalRead(23) == 0:
-  RPL.servoWrite(motorR,2000)
-  RPL.servoWrite(motorL,100)
-  print "--------"
-  if RPL.digitalRead(23) == 1:
-     RPL.servoWrite(motorR,2000)
-     RPL.servoWrite(motorL,0)
-     future = time.time() + 2
-     RPL.servoWrite(motorR,2000)
-     RPL.servoWrite(motorL,0)
-     print "gap"
-     if time.time() > future:
-         RPL.servoWrite(motorR, 2000)
-         RPL.servoWrite(motorL, 100)
-         print "!!!!!!!!"
+import evading2
+# here I think we should have it drive past the gap with the analog sensors...
+# ... on the side and then if it does the thing then yeah
