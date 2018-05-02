@@ -19,6 +19,38 @@ motorL = 0
 
 RPL.servoWrite(motorR,2000)
 RPL.servoWrite(motorL,100)
-import evading2
+print "going"
+while RPL.digitalRead(23) == 0:
+    RPL.servoWrite(motorR, 2000)
+    RPL.servoWrite(motorL, 100)
+    print "something"
+    while RPL.digitalRead(23) == 1:
+        timeb = time.time()
+        RPL.servoWrite(motorR, 2000)
+        RPL.servoWrite(motorL, 100)
+        print "gap"
+        if RPL.digitalRead(23) == 0:
+            timea = time.time()
+            timeg = timea - timeb
+            if timeg < 2:
+                RPL.servoWrite(motorR, 2000)
+                RPL.servoWrite(motorL, 100)
+                print "moving on"
+            if timeg >= 2:
+                timp = time.time() + timeg
+                while time.time() < timp:
+                    RPL.servoWrite(motorR, 1000)
+                    RPL.servoWrite(motorL, 1000)
+                    print "backing up"
+                    if time.time() >= timp:
+                        timmy = time.time() + 2
+                        while time.time() < timmy:
+                            RPL.servoWrite(motorR, 2000)
+                            RPL.servoWrite(motorL, 0)
+                            print "turning in"
+                            if time.time() >= timmy:
+                                RPL.servoWrite(motorR, 2000)
+                                RPL.servoWrite(motorL, 100)
+                                print "moving through"
 # here I think we should have it drive past the gap with the analog sensors...
 # ... on the side and then if it does the thing then yeah
