@@ -38,7 +38,7 @@ while RPL.digitalRead(23) == 0:
                 print "moving on"
             while timeg >= 2:
                 timp = time.time() + timeg
-                while time.time() < timp:
+                if time.time() < timp:
                     RPL.servoWrite(motorR, 1000)
                     RPL.servoWrite(motorL, 1000)
                     print "backing up"
