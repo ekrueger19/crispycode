@@ -19,6 +19,7 @@ motorR = 2
 right = 17
 front = 16
 left = 19
+analogR = 1
 
 rgo = 2000
 rslow = 1500
