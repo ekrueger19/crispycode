@@ -34,10 +34,10 @@ while True:
 
     while RPL.digitalRead(front) == 0: # something ahead, turn until nothing
         RPL.servoWrite(motorL, rgo)
-            if RPL.digitalRead(left) == 0:
-                RPL.servoWrite(motorL, lgo)
-                RPL.servoWrite(motorR, lgo)
-                print "~~~~~~~~~~~~"
+        if RPL.digitalRead(left) == 0:
+            RPL.servoWrite(motorL, lgo)
+            RPL.servoWrite(motorR, lgo)
+            print "~~~~~~~~~~~~"
         print "++++++"
         if RPL.digitalRead(front) != 0: # nothing to front, go
             now = time.time()
