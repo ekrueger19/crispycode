@@ -1,6 +1,6 @@
 # Welcome to Ding 3!
 # This is wall evasion, with a bonus feature:
-# will continue to turn for a minumum of 1 second after a wall is no longer sensed
+# will continue to turn for a minumum of .5s after a wall is no longer sensed
 # what does this do?
 # means we hit less walls
 # yay
