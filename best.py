@@ -36,12 +36,12 @@ while True:
     RPL.servoWrite(motorR, rgo)
     RPL.servoWrite(motorL, lgo)
 
-    while RPL.analogRead(analogR) >= 300: # middle range, can go straight
+    while RPL.analogRead(analogR) >= 400: # middle range, can go straight
         print "we good"
         RPL.servoWrite(motorR, rgo)
         RPL.servoWrite(motorL, lgo)
 
-    while RPL.analogRead(analogR) < 300: # no longer middle
+    while RPL.analogRead(analogR) < 400: # no longer middle
         while RPL.digitalRead(right) == 0: # digital also sense, so close
             print "close"
             print RPL.analogRead(analogR)
