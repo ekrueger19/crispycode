@@ -41,7 +41,7 @@ while True:
         RPL.servoWrite(motorL, lgo)
 
     while RPL.analogRead(analogR) < 300: # no longer middle
-        while RPL.digitalRead(19) == 0: # digital also sense, so close
+        while RPL.digitalRead(right) == 0: # digital also sense, so close
             print "close"
             print RPL.analogRead(analogR)
             RPL.servoWrite(motorR, rslow)
