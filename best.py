@@ -33,6 +33,7 @@ RPL.servoWrite(motorL, lgo)
 RPL.servoWrite(motorL, lgo)
 
 while True:
+    print RPL.analogRead(analogR)
     RPL.servoWrite(motorR, rgo)
     RPL.servoWrite(motorL, lgo)
 
