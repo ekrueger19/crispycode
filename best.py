@@ -33,6 +33,7 @@ RPL.servoWrite(motorL, lgo)
 RPL.servoWrite(motorL, lgo)
 
 while True:
+    print RPL.analogRead(analogR)
     RPL.servoWrite(motorR, rgo)
     RPL.servoWrite(motorL, lgo)
 
@@ -42,13 +43,14 @@ while True:
         RPL.servoWrite(motorL, lgo)
 
     while RPL.analogRead(analogR) < 300: # no longer middle
-        while RPL.digitalRead(right) == 0: # digital also sense, so close
+        print "not good"
+        if RPL.digitalRead(right) == 0: # digital also sense, so close
             print "close"
             print RPL.analogRead(analogR)
             RPL.servoWrite(motorR, rslow)
             RPL.servoWrite(motorL, lgo)
 
-        while RPL.digitalRead(19) == 1: # digital doesn't sense, far
+        if RPL.digitalRead(19) == 1: # digital doesn't sense, far
             print "far"
             print RPL.analogRead(analogR)
             RPL.servoWrite(motorR, rgo)
