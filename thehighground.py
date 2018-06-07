@@ -10,10 +10,10 @@ future = now
 # input a Password
 #
 
-lock = 2500
-step1 = 2300
-step2 = 2200
-unlock = 2000
+lock = 2000
+step1 = 1850
+step2 = 1700
+unlock = 1500
 
 #need: make incriments of openness- p1 will only open a bit and p2 more etc
 
