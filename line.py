@@ -1,6 +1,6 @@
 import setup
-import RoboPiLib are RPL
-import time as time
+import RoboPiLib as RPL
+import time
 import numpy as np
 import cv2
 cap = cv2.VideoCapture("ipcam_http://192.168.21.181/video.cgi")
