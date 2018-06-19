@@ -7,4 +7,4 @@ if raw_input("> ") == "Write":
 if raw_input("> ") == "Read":
     webbrowser.open('https://www.tor.com/category/all-fiction/original-fiction/')
 if raw_input("> ") == "Memes":
-    webbrowser.open('https://www.youtube.com/results?search_query=vines')
+    webbrowser.open('https://cheezburger.com/3907845/27-thor-ragnarok-memes-that-are-hela-hilarious')
